@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+        <form class="form" id="survey-form">
+            <div class="question">
+
+               
+            <label for="name">Name :</label>
+            <input type="text" id="name" name="name" placeholder="Name">
+      
+            
+            </div>
+
+            <div class="question">
+             
+            <label for="Email">Email :</label>
+            <input type="text" id="email" name="email" placeholder="Email">
+        
+        </div>
+            <div class="question">
+            <p >Is this the first time you are using out Product?</p>
+          
+            <div class="radio-group">
+            <label for="first"> Yes</label>
+            <input type="radio" id="first" name="first" value="Yes">
+        </div>
+            
+        <div class="radio-group">
+            <label for="first"> No</label>
+            <input type="radio" id="first" name="first" value="No">
+        </div>
+            
+        </div>
+            <div class="question">
+            <p >Want to reffer this Product?</p>
+            
+            <div class="radio-group">
+            <label for="second">Yes</label>
+            <input type="radio" id="second" name="second" value="Yes">
+            </div>
+            <div class="radio-group">
+            <label for="second"> No</label>
+            <input type="radio" id="second" name="second" value="No">
+           </div>
+      
+        </div>
+            <div class="question">
+            <p >How satisfied are you with the Product?</p>
+
+            <div class="radio-group">
+            <label for="third">Unsatisfied</label>
+            <input type="radio" id="third" name="third" value="Unsatisfied"></div>
+            
+            <div class="radio-group">
+            <label for="third">Satisfied</label>
+            <input type="radio" id="third" name="third" value="Satisfied"></div>
+            
+            <div class="radio-group">
+            <label for="third">Undecided</label>
+            <input type="radio" id="third" name="third" value="Undecided"></div>
+            
+        </div>
+
+            <div class="question">
+            <p >Do You have any suggestions for us?</p>
+            <textarea type="text" id="suggestions" name="suggestions" placeholder="Type Ypur Text"></textarea>
+            </div>
+
+            <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset" id="reset">Reset</button>
+            </div>
+
+         
+
+          </form>
+    </div>
+    </div>
+    
+<div id="confirmation"></div>
+    <script src="script.js"></script>
+</body>
+</html>
