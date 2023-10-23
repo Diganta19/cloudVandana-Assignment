@@ -61,17 +61,48 @@ button {
 }
 
 .radio-group {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: inline-flex;
+  align-items:flex-start;
+
+}
+h3{
+  display: flex;justify-content: center;
 }
 
-.radio-group input,
-.radio-group label {
-  margin-right: 10px;
-}
+
 .buttons{
   display: flex;
   justify-content: space-between;
 
 }
+#popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+}
+
+#popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 5px; 
+}
+#close-btn {
+  display: block; 
+  padding: 5px 10px;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+}
+#close-btn:focus {
+  outline: 1px solid red;  
+}
+
+

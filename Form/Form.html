@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h3>Welcome to Dapp Survey</h3>
     <div class="container">
         <div class="section">
         <form class="form" id="survey-form">
@@ -14,7 +15,7 @@
 
                
             <label for="name">Name :</label>
-            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="text" id="name" name="name" placeholder="Name" required>
       
             
             </div>
@@ -22,20 +23,18 @@
             <div class="question">
              
             <label for="Email">Email :</label>
-            <input type="text" id="email" name="email" placeholder="Email">
+            <input type="text" id="email" name="email" placeholder="Email" required>
         
         </div>
             <div class="question">
             <p >Is this the first time you are using out Product?</p>
           
             <div class="radio-group">
-            <label for="first"> Yes</label>
-            <input type="radio" id="first" name="first" value="Yes">
+            <input type="radio" id="first" name="first" value="Yes" required> Yes
         </div>
             
         <div class="radio-group">
-            <label for="first"> No</label>
-            <input type="radio" id="first" name="first" value="No">
+            <input type="radio" id="first" name="first" value="No" required> No
         </div>
             
         </div>
@@ -43,12 +42,12 @@
             <p >Want to reffer this Product?</p>
             
             <div class="radio-group">
-            <label for="second">Yes</label>
-            <input type="radio" id="second" name="second" value="Yes">
+        
+            <input type="radio" id="second" name="second" value="Yes" required> Yes
             </div>
             <div class="radio-group">
-            <label for="second"> No</label>
-            <input type="radio" id="second" name="second" value="No">
+          
+            <input type="radio" id="second" name="second" value="No" required> No
            </div>
       
         </div>
@@ -56,22 +55,22 @@
             <p >How satisfied are you with the Product?</p>
 
             <div class="radio-group">
-            <label for="third">Unsatisfied</label>
-            <input type="radio" id="third" name="third" value="Unsatisfied"></div>
+            
+            <input type="radio" id="third" name="third" value="Unsatisfied" required> Unsatisfied</div>
             
             <div class="radio-group">
-            <label for="third">Satisfied</label>
-            <input type="radio" id="third" name="third" value="Satisfied"></div>
+           
+            <input type="radio" id="third" name="third" value="Satisfied" required> Satisfied</div>
             
             <div class="radio-group">
-            <label for="third">Undecided</label>
-            <input type="radio" id="third" name="third" value="Undecided"></div>
+            
+            <input type="radio" id="third" name="third" value="Undecided" required> Undecided</div>
             
         </div>
 
             <div class="question">
             <p >Do You have any suggestions for us?</p>
-            <textarea type="text" id="suggestions" name="suggestions" placeholder="Type Ypur Text"></textarea>
+            <textarea type="text" id="suggestions" name="suggestions" placeholder="Type Your Text" required></textarea>
             </div>
 
             <div class="buttons">
@@ -85,7 +84,13 @@
     </div>
     </div>
     
-<div id="confirmation"></div>
+    <div id="popup-container">
+        <div id="popup">
+            
+        </div>
+        <button id="close-btn" type="reset">Close</button>
+      </div>
+      
     <script src="script.js"></script>
 </body>
 </html>

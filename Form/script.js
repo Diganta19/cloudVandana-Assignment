@@ -2,84 +2,61 @@ const form = document.getElementById('survey-form');
 const resetBtn = document.getElementById('reset');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
+const first = document.getElementById('first').value;
+const second = document.getElementById('second').value;
+const third = document.getElementById('third').value;
+const suggestions = document.getElementById('suggestions');
+const popupContainer = document.getElementById('popup-container');
+const popup = document.getElementById('popup');
+function generatePopupHTML() {
 
-form.addEventListener('submit', handleSubmit);
-resetBtn.addEventListener('click', resetForm);
+  // Get form values
 
-function handleSubmit(e) {
-    e.preventDefault();
+  let popupHTML = `
+  <p>Name: ${name.value}</p>
+        <p>Email: ${email.value}</p>
+         <p>Email: ${first}</p>
+        <p>Email: ${second}</p>
+       <p>Email: ${third}</p>
+         <p>Email: ${suggestions.value}</p>
+  `;
+
+  return popupHTML;
+
+}
+
+form.addEventListener('submit', e => {
+
+  e.preventDefault();
+
+  let popupHTML = generatePopupHTML();
+
+  popup.innerHTML = popupHTML;
+  popupContainer.style.display = "block";
+
+});
+
+const closeBtn = document.getElementById('close-btn');
+
+
+closeBtn.addEventListener('click', () => {
+
+  popupContainer.style.display = "none";
+
   
-    // resetErrors();
-  
-    if(!validateName(name)) {
-      showError(name, 'Name is required');
-      return;
-    }
-  
+  resetForm();
+});
+function resetForm() {
+
+    const f = document.getElementById('first');
+    const s = document.getElementById('second');
+    const t = document.getElementById('third');
    
-    if(!validateEmail(email)) {
-      showError(email, 'Email is required');
-      return;
-    }
-  
-  
-    // validate other fields
-  
-    if(validateForm()) {
-      const data = getFormData();
-      displayConfirmation(data);
-    }
-  
+    email.value='';
+    name.value='';
+    f.checked = false;
+    s.checked = false;
+    t.checked = false;
+    suggestions.value='';  
   }
   
-  function validateName(field) {
-    if(!field.value.trim()) {
-      return false;
-    }
-    return true;
-  }
-  
-  function validateEmail(field) {
-    if(!field.value) {
-      return false;
-    }
-    return true;
-  }
-  
-  function validateSelect(field) {
-    if(field.selectedIndex === 0) {
-      return false;
-    }
-    return true;
-  }
-  
-  function validateForm() {
-    return true;
-  }
-  
-  function getFormData() {
-    return {
-      name: name.value,
-      email:email.value,
-      
-    };
-  }
-  
-  function displayConfirmation(data) {
-    // let html = `
-    //   <p>Name: ${data.name}</p>
-    //   <p>Email: ${data.email}</p>
-    // `;
-    // confirmation.innerHTML = html;
-    const wndo = window.open();
-    wndo.document.body.textContent = data.name + data.email;
-  }
-  
-  function resetForm() {
-    
-    confirmation.innerHTML = '';
-  }
-  
-  function showError(field, message) {
-    field.nextElementSibling.innerText = message;
-  }
